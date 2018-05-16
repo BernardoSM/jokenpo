@@ -29,12 +29,22 @@
 			</div>
 
 			<div class="container" id="pcjogou">
-				<h3 class="row">O computador jogou:</h3>
-				<div id="jogadapc" class="row"><i id="pcjogada" class="far"></i></div>
+				<h3 class="">O computador jogou:</h3>
+				<div id="jogadapc" class="col"><i id="pcjogada" class="far"></i></div>
 			</div>
 
 			<div id="res" class="row"> 
 				<h2 id="resultado"> Resultado </h1>
+			</div>
+		</div>
+
+		<div id="placar" class="container shadow p-3 mb-5 bg-white">
+			<div class="row">
+			    <div class="col"><h3>Vitórias</h3></div>
+				<div class="col"><h3>Derrotas</h3></div>
+				<div class="w-100"></div>
+				<div class="col"><div><h4 id="nvitoria">0</h4></div></div>
+				<div class="col"><div><h4 id="nderrota">0</h4></div></div>
 			</div>
 		</div>
 	</section>
@@ -42,7 +52,12 @@
 	<script src="lib/jquery/jquery.min.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script>
+		var derrota = 0, vitoria = 0;
+
+
 		function resultado(jogada){
+				
+
 				var computador = Math.floor(Math.random() * 3)+1;
 				document.getElementById("pcjogada").classList.remove("fa-hand-rock");
 				document.getElementById("pcjogada").classList.remove("fa-hand-paper");
@@ -59,11 +74,17 @@
 					document.getElementById("resultado").innerHTML = "Empate!";
 				} else if ((jogada == 1 && computador == 2) || (jogada == 2 && computador == 3) || (jogada == 3 && computador == 1)) {
 					document.getElementById("resultado").innerHTML = "Você perdeu!";
+					derrota = derrota + 1;
 				} else {
 					document.getElementById("resultado").innerHTML = "Você ganhou!";
+					vitoria = vitoria + 1;
 				}
+
+				document.getElementById("nvitoria").innerHTML = vitoria;
+				document.getElementById("nderrota").innerHTML = derrota;
 
 		}
 	</script>
 </body>
 </html>
+
