@@ -39,27 +39,27 @@ body {
 }
 
 #pcjogou {
-	position: relative;
-	bottom: 39px;
+	position: absolute;
 }
 
 #pcjogou h3 {
 	font-family: 'OpenSans';
-	width: 50%;
-	display: inline-block;
-	left: 270px;
-	position: relative;
+	display: inline;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+    top: 18px;
+    right: 64px;
 }
 
 #jogadapc {
 	height: 75px;
 	width: 75px;
-	position: relative;
+	position: absolute;
 	background: #34495e;
 	border-radius: 5px;
-	display: inline-block;
-	left: 134px;
-	top: 29px;
+	display: inline;
+	margin-left: 60%;
 }
 
 #pcjogada {
@@ -102,7 +102,7 @@ body {
 #res {
 	position: relative;
 	margin: 0 auto;
-	top: 7px;
+	top: 97px;
 	width: 500px;
 	height: 50px;
 	background: #34495e;
@@ -119,4 +119,38 @@ body {
 	font-weight: bold;
 	color: #FFF;
 	text-shadow: 1.5px 1.5px 1.5px rgba(0,0,0,.2);
+}
+
+#placar {
+	height: 200px;
+	width: 30%;
+	background-color: #FFF;
+	position: relative;
+	top: 100px;
+	border-radius: 25px;
+}
+
+#placar div.col{
+	height: 75px;
+}
+
+#placar div.col h3 {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#placar div.col div{
+	height: 75px;
+	width: 75px;
+	background: #34495e;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+
+#placar div.col h4 {
+	color: white;
+	font-size: 50px;
+	text-align: center;
+	position: relative;
+	top: 4px;
 }
