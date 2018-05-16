@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JoKenPo</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/jokenpo.css">
+</head>
+<body>
+	
+	<section>
+		<div id="titulo" class="container shadow p-3 mb-5 bg-white">
+			<div>
+				<h1>Jo Ken Po</h1>
+				<hr>
+			</div>
+
+			<div id="jogar" class="row">
+			    <div class="col-sm">
+			      <button id="pedra" onclick="resultado(1)"><i class="far fa-hand-rock"></i></button>
+			    </div>
+			    <div class="col-sm">
+			      <button id="papel" onclick="resultado(2)"><i class="far fa-hand-paper"></i></button>
+			    </div>
+			    <div class="col-sm">
+			      <button id="tesoura" onclick="resultado(3)"><i class="far fa-hand-scissors"></i></button>
+			    </div>
+			</div>
+
+			<div class="container" id="pcjogou">
+				<h3 class="row">O computador jogou:</h3>
+				<div id="jogadapc" class="row"><i id="pcjogada" class="far"></i></div>
+			</div>
+
+			<div id="res" class="row"> 
+				<h2 id="resultado"> Resultado </h1>
+			</div>
+		</div>
+	</section>
+
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script>
+		function resultado(jogada){
+				var computador = Math.floor(Math.random() * 3)+1;
+				document.getElementById("pcjogada").classList.remove("fa-hand-rock");
+				document.getElementById("pcjogada").classList.remove("fa-hand-paper");
+				document.getElementById("pcjogada").classList.remove("fa-hand-scissors");
+				if (computador == 1){
+					document.getElementById("pcjogada").classList.add("fa-hand-rock");
+				} else if (computador == 2){
+					document.getElementById("pcjogada").classList.add("fa-hand-paper");
+				} else {
+					document.getElementById("pcjogada").classList.add("fa-hand-scissors");
+				}
+
+				if (jogada == computador){
+					document.getElementById("resultado").innerHTML = "Empate!";
+				} else if ((jogada == 1 && computador == 2) || (jogada == 2 && computador == 3) || (jogada == 3 && computador == 1)) {
+					document.getElementById("resultado").innerHTML = "Você perdeu!";
+				} else {
+					document.getElementById("resultado").innerHTML = "Você ganhou!";
+				}
+
+		}
+	</script>
+</body>
+</html>
